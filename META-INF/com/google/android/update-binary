@@ -370,7 +370,7 @@ CurOpenGA_VER=0
 # find latest OpenGAPackage
 oIFS=$IFS
 IFS=$'\n\t'
-for f in $(find /external_sd /sdcard -type f -iname open_gapps-*.zip -maxdepth 3 2>/dev/null); do
+for f in $(find /external_sd /sdcard -type f -iname open_gapps-*.zip -maxdepth 1 2>/dev/null); do
   if [ "$(unzip -pqqo "$f" g.prop 2>/dev/null | sed -n '/ro.addon.arch/s/.*=//p')" = "$ARCH" ] \
     && [ "$(unzip -pqqo "$f" g.prop 2>/dev/null | sed -n '/ro.addon.sdk/s/.*=//p')" = "$API" ]
   then
